@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-28",
+  "status": "passed",
+  "checks": {
+    "wheel_import": true,
+    "automatic_weight_load": true,
+    "numpy_frame_call": true,
+    "image_path_call": true,
+    "device": "cpu",
+    "example_cli": true,
+    "photo_cli": true,
+    "video_frames": 5,
+    "original_model_and_metadata_identical": true
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.3",
+    "opencv-python": "4.14.0.94"
+  },
+  "installation": "Wheel built and pip-installed into isolated target; existing CPU dependencies used. Full fresh dependency download not completed.",
+  "not_tested": [
+    "CUDA in this packaging run",
+    "new accuracy evaluation",
+    "lab PC environment"
+  ],
+  "training": false,
+  "dataset_merge": false,
+  "networking_included": false
+}

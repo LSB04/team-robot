@@ -1,0 +1,25 @@
+{
+  "release": "2026-10-28",
+  "model": "TinyGrid480 FP32 stable",
+  "sha256": {
+    ".gitattributes": "71bd2ed8b443bcb6a0ecff28bab1d654429bb88b4ea3ac2d45ca53427b205276",
+    ".gitignore": "c42e009367dd1bd969fbd5254f49429440b75d04bd19baad2c95776e156f3f95",
+    "detect_image.py": "6c4b211b5132f47092c277a1729807669a72ccf5f5d0055a7711b00f7cfd0363",
+    "detect_video.py": "2a30dfdcd0681d83160164e94ee6dbea9d9f348e30c84c92f82d2ec2d40fe125",
+    "example.py": "df705057abde6b4146084d89f573f86103065e0088380c232995693e2758f216",
+    "lightdet/__init__.py": "4d577fca6711c6066abef8179ec959dbcf9258c9338034344eb775c268edd92a",
+    "lightdet/core.py": "73e9d2dad9e36d72a0f45c7a619455fe417e99a3c732c01b8702c48456b65136",
+    "lightdet/cuda_backend.py": "9df54976934f0a65cf09906ebc275dc24a7f6592474368249fcfad28998058a9",
+    "lightdet/decode_v2.py": "de4cdceea027d2d5ef56e53b9e6bd10b59f6411e26aaad7a98d29ec5b2af6724",
+    "lightdet/models/__init__.py": "97dd1fdd9c8a4edb231e63d39456d34cbddd95184db90968ac92aa7ba356fbf0",
+    "lightdet/models/tinygrid480_fp32.json": "df0ee73d197fc2c99c0eaa545645a848beb2369fbc00fd8f91bcd4804f5746e0",
+    "lightdet/models/tinygrid480_fp32.onnx": "a2e2f67952e2720f9f517aa9644bfb283b71b2fe4e7725e0db22d54aff2bbde1",
+    "lightdet/openvino_backend.py": "cdff05e1aa2c93e9edb888f91eb5f06b3366bc2a66422c515ce7b9d4bf8dde82",
+    "lightdet/runtime.py": "1cf6bfbed4f49d00ed8589e7273950d2161a900e4af871a110298d581aa0fd3c",
+    "pyproject.toml": "40bf54ad040ffe4b0c78281839e820752eb72f3756d7f2a1e47415f986290c85",
+    "README.md": "35484badca058b17f58b92a05971c226aa073aaf4bf1e8d0524ecaf885785cb9",
+    "release_verification.json": "58454132e6238259e3d31af1e5cb80e0033bc26036386c24525fa62d37c161ac",
+    "requirements-cpu.txt": "368965a8bbc6343b525342084897ad439afbef3ddda684e5cf7513ac07788f94",
+    "requirements-cuda.txt": "9d7eafe5d03e8dec83878a388e0e4eae22ca54e7a77c9006bdaae1d305ca8b75"
+  }
+}
