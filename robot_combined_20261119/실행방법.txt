@@ -1,0 +1,86 @@
+통합본 실행 방법 — 노트북 PowerShell에서 실행
+
+기본 주소: 노트북 192.168.137.1 / Pi 192.168.137.99
+통신 포트: 5602 (제어), 5603 (영상)
+각 명령어의 실행 위치는 모두 노트북 PowerShell입니다.
+Pi 명령은 ssh 뒤의 따옴표 안에서 실행됩니다.
+아래 ${env:USERPROFILE}은 현재 Windows 사용자 폴더입니다.
+
+1. 기존 서버와 Pi 로봇 프로그램을 Q 또는 Ctrl+C로 종료
+
+2. 처음 한 번: Pi에 새 통합본 복사
+
+cd "$env:USERPROFILE\Desktop\robot_combined_20261119"
+ssh pi@192.168.137.99 "mkdir -p /home/pi/Downloads/last_combined"
+scp -r .\pi_client\* pi@192.168.137.99:/home/pi/Downloads/last_combined/
+
+기존 last에 덮어쓰지 않고 last_combined에서 실행합니다.
+이후 통합본을 업데이트해도 같은 scp 명령을 사용합니다.
+노트북 파일과 Pi 파일은 같은 통합본으로 맞춥니다.
+
+3. Pi 초기자세
+
+ssh -t pi@192.168.137.99 "cd /home/pi/Downloads/last_combined && python3 init_pose.py --hold-seconds 1"
+
+다리 초기자세를 1초 유지한 후 다리 PWM을 해제하고 명령이 끝납니다.
+발사각 기준 수평 PWM 280은 mission_config.json에 들어 있습니다.
+
+4. 노트북 PowerShell 창 A — 통합 서버 실행
+
+cd "$env:USERPROFILE\Desktop\robot_combined_20261119"
+& "$env:USERPROFILE\Desktop\학교\욜로대체 프로젝트\.venv\Scripts\python.exe" -B .\server.py
+
+Waiting on TCP 5602 (control), 5603 (video)가 나오면 창 A를 켜 둡니다.
+이전 server1.py/server2.py를 함께 실행하지 않습니다.
+
+5. 노트북 PowerShell 창 B — Pi 통합 클라이언트 실행
+
+ssh -t pi@192.168.137.99 "cd /home/pi/Downloads/last_combined && GPIOZERO_PIN_FACTORY=lgpio python3 client.py --execute --arm --server 192.168.137.1 --mag-calibration /home/pi/Downloads/pi_client/mag_MPU9250_1_68.json"
+
+--execute는 모터·센서 실기 동작, --arm은 14번 출력 허용입니다.
+시작할 때 IMU 영점 측정이 끝날 때까지 로봇을 가만히 둡니다.
+READY와 카메라 영상이 뜨면 다음 단계로 갑니다.
+
+6. 창 A에서 start 입력 후 Enter, 또는 영상창 SPACE
+
+start
+
+이후 탐색 → 불 접근·정렬 → 200cm 이하 도착 확인·저장
+→ 현재값 재확인 → 각도 조절·발사까지 자동 진행합니다.
+도착 후 서버를 종료하거나 전원선을 바꿔 연결하지 않습니다.
+발사 단계에 들어가면 다리 보행 명령은 보내지 않고 도착 자세를 유지합니다.
+발사 후 자동 주행을 재개하지 않고 정지합니다.
+
+7. 종료
+
+창 A에서 q + Enter 또는 영상창 Q.
+Pi만 바로 중단하려면 창 B에서 Ctrl+C.
+서버/통신 종료를 받으면 Pi가 다리 PWM 해제 및 14번 정지를 수행합니다.
+창 B에 LEG PWM OFF, Stopped 메시지가 나온 뒤 종료됩니다.
+초기자세를 다시 잡으려면 클라이언트 종료 후 3번 명령을 사용합니다.
+
+다른 노트북
+
+Python 3.10 이상을 설치하고 이 폴더 전체를 복사합니다.
+첫 설치는 setup_pc.cmd, 이후 실행은 run_server.cmd를 더블클릭합니다.
+PowerShell로 실행하려면:
+
+cd "$env:USERPROFILE\Desktop\robot_combined_20261119"
+& .\.venv\Scripts\python.exe -B .\server.py
+
+Pi client.py의 --server 값은 새 노트북의 핫스팟 IPv4 주소로 바꿉니다.
+Pi 주소가 바뀌면 ssh/scp의 192.168.137.99도 바꿉니다.
+Windows 방화벽 허용 창이 뜨면 연결 중인 네트워크에서 Python 통신을 허용합니다.
+복사 후 recordings 폴더가 없어도 첫 실행 시 자동 생성됩니다.
+
+자력계 보정
+
+현재 명령은 이미 Pi에 저장된 다음 파일을 재사용합니다.
+/home/pi/Downloads/pi_client/mag_MPU9250_1_68.json
+파일이 없다면 먼저 다음 명령으로 보정 파일을 만듭니다.
+
+ssh -t pi@192.168.137.99 "cd /home/pi/Downloads/last_combined && python3 calibrate_heading.py"
+
+보정 화면의 안내대로 진행하고 Saved 경로를 확인합니다.
+그 후 5번 명령의 --mag-calibration 경로를 그 Saved 경로로 바꿉니다.
+보정 파일은 반복 실행할 때 다시 사용합니다.

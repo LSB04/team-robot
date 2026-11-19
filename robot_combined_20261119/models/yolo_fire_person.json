@@ -1,0 +1,12 @@
+{
+  "source": "C:\\Users\\LG\\Desktop\\\ud559\uad50\\\uc69c\ub85c\ub300\uccb4 \ud504\ub85c\uc81d\ud2b8\\90_\ud559\uc2b5\uacfc\uacfc\uac70\uc790\ub8cc\\runs\\pretraining_20261030\\yolov8n_current\\train\\weights\\best.pt",
+  "sha256": "63b04413cb8962c273ee5c32a8db7fcc9edeee9de67a75b900c969097f67e39a",
+  "names": [
+    "fire",
+    "person",
+    "furniture"
+  ],
+  "training_input": 480,
+  "runtime_imgsz": 640,
+  "note": "Existing trained YOLOv8n; no retraining. Kept original weights unchanged."
+}

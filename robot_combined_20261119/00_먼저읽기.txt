@@ -1,0 +1,40 @@
+로봇 통합 실행본 — robot_combined_20261119
+
+노트북의 server.py와 Raspberry Pi의 client.py를 한 번씩 실행합니다.
+시작 명령 한 번으로 탐색부터 불 접근, 정렬, 각도 조절, 발사까지 진행합니다.
+기존 server1/server2를 별도로 실행하거나 중간에 전환할 필요가 없습니다.
+
+구성
+  server.py                 노트북: YOLO 검출, 통합 UI, 영상·로그 저장
+  pi_client/client.py        Pi: 센서, 보행·회전, 접근, 각도 조절·발사
+  pi_client/init_pose.py     Pi: 기존 다리 초기자세
+  models/yolo_fire_person.pt YOLO 모델
+  실행방법.txt              복사부터 초기자세·시작·종료까지 명령어
+  통합동작설명.txt           동작 순서와 적용값
+
+운용 조건
+  다리와 발사장치의 전원 및 PWM이 모두 연결된 구성을 전제로 합니다.
+  Pi에는 pi_client 폴더의 내용물을 /home/pi/Downloads/last_combined에 넣습니다.
+  기존 /home/pi/Downloads/last 및 robot_newmap_test는 그대로 보존합니다.
+  기존 로봇 프로그램은 종료한 뒤 통합본만 실행합니다.
+
+자동 흐름
+  탐색 → 불 검출·중앙 정렬·접근 → 200cm 이하 도착 확인
+  → 전진 중단·최종 정렬 → 위치 저장 → 현재 불·거리 재확인
+  → 13번 각도 조절 → 14번 3초 구동 → 정지 유지
+
+사람 > 불 > 좌우 탐색 우선순위입니다.
+사람 발견 시 정지하고 노트북 경고음·화면·로그로 구조 요청을 알립니다.
+사람 확인으로 정지한 뒤에는 start 명령으로 다시 시작합니다.
+
+영상과 로그: 이 폴더의 recordings\combined\날짜_시간\
+  camera_ui.mp4 : UI와 불 중점 표시 포함
+  camera.mp4    : Pi 카메라 원본
+  events.jsonl  : 센서·상태·명령 기록
+  fire_handoff.json / fire_handoff_rechecked.json : 도착 및 재확인값
+
+시작: 영상창 SPACE 또는 노트북 터미널 start + Enter
+일시 정지: 영상창 S 또는 노트북 터미널 stop + Enter
+종료: 영상창 Q 또는 노트북 터미널 q + Enter
+종료 시 14번 정지 명령 및 다리 PWM 해제를 수행합니다.
+한 번 실행한 클라이언트에서는 발사를 한 번만 허용합니다.

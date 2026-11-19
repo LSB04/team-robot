@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+recordings/
+logs/
+outputs/
+pi_client/handoffs/
+pi_client/mag_*.json
+.env

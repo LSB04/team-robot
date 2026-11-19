@@ -1,0 +1,272 @@
+{
+  "name": "robot_combined_20261119",
+  "entry_pc": "server.py",
+  "entry_pi": "pi_client/client.py",
+  "files": [
+    {
+      "path": "00_먼저읽기.txt",
+      "bytes": 2240,
+      "sha256": "7f16895a172e51db739c281e61cdc3001058e856e32ea133ffcec83be3fdf954"
+    },
+    {
+      "path": "aiming.py",
+      "bytes": 9613,
+      "sha256": "f1ebfffdf978a03aa182f250f1d3a2088f4b285dfecc7534363f67f28b920bfc"
+    },
+    {
+      "path": "dashboard.py",
+      "bytes": 18762,
+      "sha256": "0c4d210d72ca5f450bcf2b9026bda7be66a5d0619310859dbf975035356cae61"
+    },
+    {
+      "path": "fire_overlay.py",
+      "bytes": 2935,
+      "sha256": "c3526f0962db406599bbf5c1fa6579a5eeb220e75ff5f57e7513db8b255ef0b1"
+    },
+    {
+      "path": "lightdet/__init__.py",
+      "bytes": 112,
+      "sha256": "2b45548b44b116ce205ed2bf7c68095eeb5600a9a2273a2a406b6961895bf302"
+    },
+    {
+      "path": "lightdet/core.py",
+      "bytes": 11220,
+      "sha256": "b8ff4790103f5b4ba7c9501fa221018175c0399602a89c74841561e714acb966"
+    },
+    {
+      "path": "lightdet/decode_v2.py",
+      "bytes": 1515,
+      "sha256": "de4cdceea027d2d5ef56e53b9e6bd10b59f6411e26aaad7a98d29ec5b2af6724"
+    },
+    {
+      "path": "lightdet/ort_cpu_backend.py",
+      "bytes": 2574,
+      "sha256": "e723434a50d8ec5863296e43597dbbc438717c57c08900e4a92c5a640d084697"
+    },
+    {
+      "path": "lightdet/runtime.py",
+      "bytes": 671,
+      "sha256": "1cf6bfbed4f49d00ed8589e7273950d2161a900e4af871a110298d581aa0fd3c"
+    },
+    {
+      "path": "mission_config.json",
+      "bytes": 2554,
+      "sha256": "b2bdcd9e6a909356ea3d76e65caf8fd8aa43222de41bd0acf67252b4c933ddf0"
+    },
+    {
+      "path": "models/yolo_fire_person.json",
+      "bytes": 509,
+      "sha256": "43bef7dd969f9fffc72078703b7d0bb83b5b40f718e15bd50774806f5a018df2"
+    },
+    {
+      "path": "models/yolo_fire_person.pt",
+      "bytes": 6244337,
+      "sha256": "63b04413cb8962c273ee5c32a8db7fcc9edeee9de67a75b900c969097f67e39a"
+    },
+    {
+      "path": "pc_common.py",
+      "bytes": 16796,
+      "sha256": "13d66e909e9012d3a1731c6b04084869b8a4dbae3a5e5a195e64d20e380368a4"
+    },
+    {
+      "path": "pi_client/aiming.py",
+      "bytes": 9613,
+      "sha256": "f1ebfffdf978a03aa182f250f1d3a2088f4b285dfecc7534363f67f28b920bfc"
+    },
+    {
+      "path": "pi_client/angle_control.py",
+      "bytes": 2215,
+      "sha256": "11a3ed6e373184689ef9c005a2d4ca7c417f563e09efd34194127cf6b77fc3c2"
+    },
+    {
+      "path": "pi_client/calibrate_heading.py",
+      "bytes": 1465,
+      "sha256": "585fba36c061af941e4e933aab9132d2f5ce82c5ee453a05ee65c5dd4a1abd33"
+    },
+    {
+      "path": "pi_client/client.py",
+      "bytes": 166,
+      "sha256": "ca02faa57f7bde2012f1121a5549c51a7176981d1d07e76e3f609efa416ac26e"
+    },
+    {
+      "path": "pi_client/combined_flow.py",
+      "bytes": 1541,
+      "sha256": "f5988e41e135bf4623601a6c491ba322900e4ccc5ab765ade19f28c8196abb93"
+    },
+    {
+      "path": "pi_client/core.py",
+      "bytes": 8907,
+      "sha256": "3b801f41c1cc21741f594bf2b756cce32f005e7083f5999c9533db4afad4cc43"
+    },
+    {
+      "path": "pi_client/fire_handoff.py",
+      "bytes": 9782,
+      "sha256": "367b8da6702a8e08f3c7e19a825ed94347b22b41cedad694152f54ace0193921"
+    },
+    {
+      "path": "pi_client/fire_navigation.py",
+      "bytes": 7085,
+      "sha256": "6f6df38615bd47f2bc422f97d4d5f41467844827012adbd1733df660fef0187e"
+    },
+    {
+      "path": "pi_client/fire_review.py",
+      "bytes": 7532,
+      "sha256": "dac791d6f49825d876ab1c981287b61719933ccbbf8e21363bdc32a6f6f2aae3"
+    },
+    {
+      "path": "pi_client/forward_control.py",
+      "bytes": 2257,
+      "sha256": "d28844183cb3dde1feeaeb04bab6d9dc637ae6920cebbb0cb0263fa9d13251fa"
+    },
+    {
+      "path": "pi_client/gait.py",
+      "bytes": 20286,
+      "sha256": "86fb234e6c64ef1d52aba432838ae15e71e944d70f4cbdefb548a59c66a7dcee"
+    },
+    {
+      "path": "pi_client/gyro_calibration.py",
+      "bytes": 2001,
+      "sha256": "9706a083c2af03232b19ccb5bfe82592b4cd642718af98232fbf9a40e6dbed13"
+    },
+    {
+      "path": "pi_client/heading_fusion.py",
+      "bytes": 13499,
+      "sha256": "6cd11cdc436bf4acb71e7b6016d9461d938fc24016c095defce6704fad04d053"
+    },
+    {
+      "path": "pi_client/init_pose.py",
+      "bytes": 2042,
+      "sha256": "aa2fc9925b7ef767dc67937bf2e53c2dfb9882cea17953d74cc1b7704c4a2cf8"
+    },
+    {
+      "path": "pi_client/Kalman_filter.py",
+      "bytes": 1251,
+      "sha256": "329c208745f233286c4332994e4a71d92e3775308f31dada3b20cc987c933138"
+    },
+    {
+      "path": "pi_client/launcher.py",
+      "bytes": 3548,
+      "sha256": "627fda6aca14c00400b39f603f970cece3229fb92293ecea0a9e067db4488c33"
+    },
+    {
+      "path": "pi_client/launcher_diagnostics.py",
+      "bytes": 1827,
+      "sha256": "d05cb51e6ee7bb813b3bc3e313d8cc6d74a8cd99cc2f37900b873810bdc016fe"
+    },
+    {
+      "path": "pi_client/launcher_range.py",
+      "bytes": 1064,
+      "sha256": "6994c5c139601485b986bb7ba7001f87cf3cf444404eab8895e3f94705008547"
+    },
+    {
+      "path": "pi_client/launcher_review.py",
+      "bytes": 2633,
+      "sha256": "9ffcc2e8eb6482ea3c58c5e0c236ddaf38522a3fe149dc5e792d5301a983775f"
+    },
+    {
+      "path": "pi_client/leg_shutdown.py",
+      "bytes": 415,
+      "sha256": "8035440513bb0e337dc088fbddc6eaec49319047399c708ab6d89032e8023728"
+    },
+    {
+      "path": "pi_client/legacy_motion.py",
+      "bytes": 11892,
+      "sha256": "df6871723d7fa625c21efd5743a89ebc12711c1646a007d91e7b6a1d09da3ef5"
+    },
+    {
+      "path": "pi_client/leveling.py",
+      "bytes": 3956,
+      "sha256": "8fa04f417f18d8d0fd71b82582d5995fca31dd846281a309b653cea0422c680e"
+    },
+    {
+      "path": "pi_client/mission.py",
+      "bytes": 30615,
+      "sha256": "05bd3356e85d7d5d90c0b466c56fabce7011171b1b14005e3570529a5340e930"
+    },
+    {
+      "path": "pi_client/mission_config.json",
+      "bytes": 2554,
+      "sha256": "b2bdcd9e6a909356ea3d76e65caf8fd8aa43222de41bd0acf67252b4c933ddf0"
+    },
+    {
+      "path": "pi_client/navigation.py",
+      "bytes": 13140,
+      "sha256": "35df2709aff8a7a477148d7e8bdf22db4a2a7989d8592fc79092c40a23a7a897"
+    },
+    {
+      "path": "pi_client/person_review.py",
+      "bytes": 2688,
+      "sha256": "5fe2881fc8948bcb2711c5d95dbe46eaadbc4f73db00c8ec1a2c42d56015f760"
+    },
+    {
+      "path": "pi_client/pi_common.py",
+      "bytes": 38779,
+      "sha256": "4eded42847c69a9ca55a704c63ce69f67eb7ff11c38c722539dd3f40356dc68d"
+    },
+    {
+      "path": "pi_client/pwm_driver.py",
+      "bytes": 3027,
+      "sha256": "b689fe60e7533a1f906587368aea58bce45aad8bc9704c2b341a519fe49d83d5"
+    },
+    {
+      "path": "pi_client/sensors.py",
+      "bytes": 7978,
+      "sha256": "dd3759b3bf857b761c6d5a4fddd923d86ec75cf2d8fc720b91d3277d725a4b4f"
+    },
+    {
+      "path": "pi_client/transport.py",
+      "bytes": 8131,
+      "sha256": "d04f274eaf21bd1e44857d75e3eda78710917e04141f9f1194db89f75b1fad39"
+    },
+    {
+      "path": "pi_client/video.py",
+      "bytes": 9996,
+      "sha256": "b08ee73fa0f27ac3a0a5891a62df1f1020c78d122c00560639adbfc109ded579"
+    },
+    {
+      "path": "requirements_pc.txt",
+      "bytes": 101,
+      "sha256": "950c5be42c847fa17415d28c1797038c03a3c7f9d5fde1015a1846c42a8107d7"
+    },
+    {
+      "path": "run_server.cmd",
+      "bytes": 174,
+      "sha256": "582a0f1a918fe27d6389d9c4d975865ee0c12ca36ac894840105c7c9013ef1fd"
+    },
+    {
+      "path": "server.py",
+      "bytes": 166,
+      "sha256": "ba46e9e164238860314cfaeadd2f02bad0d228e769b04ef37bb45bd098132b9a"
+    },
+    {
+      "path": "setup_pc.cmd",
+      "bytes": 147,
+      "sha256": "f2a1272c503427d60d30ac1f98b2128202f86d4970bee6b7840817001ea6a8a9"
+    },
+    {
+      "path": "transport.py",
+      "bytes": 8131,
+      "sha256": "d04f274eaf21bd1e44857d75e3eda78710917e04141f9f1194db89f75b1fad39"
+    },
+    {
+      "path": "video.py",
+      "bytes": 9996,
+      "sha256": "b08ee73fa0f27ac3a0a5891a62df1f1020c78d122c00560639adbfc109ded579"
+    },
+    {
+      "path": "vision_review.py",
+      "bytes": 5675,
+      "sha256": "f60cb845092d5c00ce2c8d05ba5c6168167017e8e75553e329641746f0ef35d6"
+    },
+    {
+      "path": "실행방법.txt",
+      "bytes": 4121,
+      "sha256": "af48cf7b9d82331fa9a6122c5f9db2b215653e15a611a5c5ff812ee456b2be73"
+    },
+    {
+      "path": "통합동작설명.txt",
+      "bytes": 4490,
+      "sha256": "7802ff7c1c1485b7beeb6a33f6699858d4c19ae2214004a35d572c8fdd7de129"
+    }
+  ]
+}
